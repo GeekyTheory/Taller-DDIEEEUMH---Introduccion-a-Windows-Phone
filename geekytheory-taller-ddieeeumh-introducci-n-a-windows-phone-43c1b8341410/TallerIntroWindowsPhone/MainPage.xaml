@@ -1,0 +1,82 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TallerIntroWindowsPhone.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+    	<VisualStateManager.VisualStateGroups>
+    		<VisualStateGroup x:Name="VisualStateGroup">
+    			<VisualStateGroup.Transitions>
+    				<VisualTransition GeneratedDuration="0">
+    					<Storyboard x:Name="animacion1">
+    						<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="ellipse">
+    							<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    							<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="317.91"/>
+    							<EasingDoubleKeyFrame KeyTime="0:0:1" Value="128.358"/>
+    							<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="335.821"/>
+    							<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="178.362"/>
+    						</DoubleAnimationUsingKeyFrames>
+    						<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="ellipse">
+    							<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    							<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="31.343"/>
+    							<EasingDoubleKeyFrame KeyTime="0:0:1" Value="107.462"/>
+    							<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="176.119"/>
+    							<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="263.43"/>
+    						</DoubleAnimationUsingKeyFrames>
+    						<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="ellipse">
+    							<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="1"/>
+    							<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="1.52899"/>
+    						</DoubleAnimationUsingKeyFrames>
+    						<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="ellipse">
+    							<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="1"/>
+    							<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="1.52899"/>
+    						</DoubleAnimationUsingKeyFrames>
+    						<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+    							<EasingColorKeyFrame KeyTime="0:0:1.4" Value="#FFF4F4F5"/>
+    							<EasingColorKeyFrame KeyTime="0:0:1.9" Value="#FF0E0EB8"/>
+    						</ColorAnimationUsingKeyFrames>
+    					</Storyboard>
+    				</VisualTransition>
+    			</VisualStateGroup.Transitions>
+    		</VisualStateGroup>
+    	</VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="MI APLICACIÓN" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="MainPage" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+        
+        
+        
+
+        <!--ContentPanel. Colocar aquí el contenido adicional-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" >
+            <Button Click="navega_click" Content="Go" HorizontalAlignment="Left" Height="92" Margin="350,10,0,0" VerticalAlignment="Top" Width="96"/>
+            <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="92" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="335"/>
+            <Ellipse x:Name="ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="110" Margin="30,124,0,0" Stroke="Black" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.5,0.5">
+            	<Ellipse.RenderTransform>
+            		<CompositeTransform/>
+            	</Ellipse.RenderTransform>
+            </Ellipse>
+            <Button Content="Move" HorizontalAlignment="Left" Height="78" Margin="243,117,0,0" VerticalAlignment="Top" Width="202" Click="move_click"/>
+        </Grid>
+    </Grid>
+ 
+</phone:PhoneApplicationPage>
